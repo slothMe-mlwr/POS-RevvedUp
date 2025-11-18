@@ -14,7 +14,7 @@ function renderProducts(list) {
   list.forEach(product => {
     let card = $(`
       <div class="bg-white shadow-md rounded-lg p-4 text-center hover:shadow-xl transition cursor-pointer">
-        <img src="http://localhost/POSunderRevision2/static/upload/${product.prod_img}" 
+        <img src="https://revvedup.site/static/upload/${product.prod_img}" 
              alt="${product.prod_name}" 
              class="mx-auto mb-4 h-40 object-contain">
         <h3 class="text-gray-700 font-medium">${product.prod_name}</h3>
@@ -24,7 +24,7 @@ function renderProducts(list) {
 
     // Click event to show modal
     card.on("click", function() {
-      $("#modalImage").attr("src", `http://localhost/POSunderRevision2/static/upload/${product.prod_img}`);
+      $("#modalImage").attr("src", `https://revvedup.site/static/upload/${product.prod_img}`);
       $("#modalName").text(product.prod_name);
       $("#modalPrice").text(`Php. ${product.prod_price}`);
       $("#modalDesc").text(product.prod_description || "No description available");
@@ -94,7 +94,7 @@ function renderCategories() {
 $(document).ready(function () {
   // Fetch products
   $.ajax({
-    url: "http://localhost/POSunderRevision2/controller/end-points/controller.php?requestType=fetch_available_products",
+    url: "https://revvedup.site/controller/end-points/controller.php?requestType=fetch_available_products",
     method: "GET",
     dataType: "json",
     success: function (response) {

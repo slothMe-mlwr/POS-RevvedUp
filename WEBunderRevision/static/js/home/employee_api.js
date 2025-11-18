@@ -66,7 +66,7 @@ $(document).ready(function(){
   // --- Fetch Employees ---
   function fetchEmployees(selectedDate, selectedTime){
     $.ajax({
-      url: "http://localhost/POSunderRevision2/controller/end-points/controller.php",
+      url: "https://revvedup.site/controller/end-points/controller.php",
       method: "GET",
       data: {
         requestType: "fetch_available_employees",
