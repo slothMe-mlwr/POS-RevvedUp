@@ -180,6 +180,7 @@ $(document).ready(function () {
     $(document).on('click', '.seeDetailsBtn', function () {
         const btn = $(this);
         const employee = btn.data('employee') || "None";
+        const otherDescription = (btn.data('other') && btn.data('other').trim() !== "") ? btn.data('other') : "None";
         const content = `
             <p><strong>Reference:</strong> ${btn.data('reference')}</p>
             <p><strong>Customer:</strong> ${btn.data('fullname')}</p>
@@ -190,7 +191,7 @@ $(document).ready(function () {
             <p><strong>Status:</strong> ${btn.data('status')}</p>
             <p><strong>Employee:</strong> ${employee}</p>
             <p><strong>Address:</strong> ${btn.data('city')} ${btn.data('street')}</p>
-            <p><strong>Other Description:</strong> ${btn.data('other')}</p>
+            <p><strong>Other Description:</strong> ${otherDescription}</p>
         `;
         $('#modalContent').html(content);
         $('#detailsModal').removeClass('opacity-0 pointer-events-none');
