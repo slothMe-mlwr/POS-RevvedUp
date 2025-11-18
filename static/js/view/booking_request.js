@@ -103,7 +103,8 @@ $(document).ready(function () {
                                         data-city='${(data.city||"")}'
                                         data-street='${(data.street||"")}'
                                         data-status='${(data.status||"")}'
-                                        data-employee='${(data.employee_name || "")}'>
+                                        data-employee='${(data.employee_name || "")}'
+                                        data-other='${data.problem_description ?? ""}'>
                                         <span class="material-icons text-sm align-middle">visibility</span> See Details
                                     </button>
                                     ${cancelBtn}
@@ -189,6 +190,7 @@ $(document).ready(function () {
             <p><strong>Status:</strong> ${btn.data('status')}</p>
             <p><strong>Employee:</strong> ${employee}</p>
             <p><strong>Address:</strong> ${btn.data('city')} ${btn.data('street')}</p>
+            <p><strong>Other Description:</strong> ${otherDescription}</p>
         `;
         $('#modalContent').html(content);
         $('#detailsModal').removeClass('opacity-0 pointer-events-none');
